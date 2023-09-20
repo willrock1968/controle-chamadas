@@ -1,0 +1,51 @@
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card-group">
+                        <div class="card p-4">
+                            <div class="card-body">
+                                <form [formGroup]="f" novalidate>  <!-- começo da tag form -->
+                                    <h1>Controle de Chamadas</h1>
+                                    <!-- form de login -->
+                                    <div>
+                                        <p class="text-muted">Insira seu email e senha para acessar!</p>
+                                        <div class="input-group mb-3  has-feedback" [ngClass]="{'has-success': f.controls['email'].valid,
+                                        'has-error': f.controls['email'].invalid && (f.controls['email'].touched || f.controls['email'].dirty)}">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-envelope"></i></span>
+                                            </div>
+                                            <input type="text" formControlName="email" class="form-control" placeholder="Email" autocomplete="username" required>
+                                            <span *ngIf="f.controls['email'].valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+                                            <span *ngIf="f.controls['email'].invalid && (f.controls['email'].touched || f.controls['email'].dirty)">
+                                                <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                                                <span class="text-danger">E-mail inválido, exemplo de email: carol@gmail.com.</span>
+                                            </span>
+                                        </div>
+                                        <div class="input-group mb-4" [ngClass]="{'has-success': f.controls['password'].valid,
+                                        'has-error': f.controls['password'].invalid && (f.controls['password'].touched || f.controls['password'].dirty)}">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="icon-lock"></i></span>
+                                            </div>
+                                            <input type="password" formControlName="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
+                                            <span class="text-danger" *ngIf="f.controls['password'].invalid && (f.controls['password'].touched || f.controls['password'].dirty)">
+                                            Campo obrigatório com senha de no mínimo 8 Caracteres.
+                                        </span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                            <button type="button" [disabled]="f.invalid" (click)="onSubmit()" class="btn btn-primary px-4">Acessar </button>
+                                            </div>                        
+                                        </div>
+                                    </div>  
+                                    <!-- fim do form de login -->
+                                </form>    
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
