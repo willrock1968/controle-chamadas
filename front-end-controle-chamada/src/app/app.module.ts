@@ -5,15 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { AuthModule } from './login/auth/auth.module';
+import { NivelCursoModule } from './nivel-curso/nivel-curso.module';
 
 @NgModule({
   declarations: [
     AppComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AuthModule
+    AuthModule,
+    NivelCursoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
