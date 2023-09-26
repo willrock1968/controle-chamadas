@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './login/auth/auth.module';
 import { NivelCursoModule } from './nivel-curso/nivel-curso.module';
+import { HeaderModule } from './header/header.module';
+import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { NivelCursoModule } from './nivel-curso/nivel-curso.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    NivelCursoModule
+    NivelCursoModule,
+    HeaderModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
