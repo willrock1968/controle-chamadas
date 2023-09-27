@@ -11,11 +11,14 @@ import { AuthModule } from './login/auth/auth.module';
 import { NivelCursoModule } from './nivel-curso/nivel-curso.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
+import { CursoModule } from './curso/curso.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent
+    ModalComponent    
     
   ],
   imports: [
@@ -25,7 +28,8 @@ import { FooterModule } from './footer/footer.module';
     AuthModule,
     NivelCursoModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    CursoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

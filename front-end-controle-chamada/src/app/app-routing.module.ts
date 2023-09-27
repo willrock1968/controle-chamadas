@@ -12,6 +12,10 @@ export const routes: Routes =
   {
     path: 'nivel-curso',
     loadChildren: () => import('./nivel-curso/nivel-curso.module').then(m => m.NivelCursoModule)        
+  },  
+  {
+    path: 'curso',
+    loadChildren: () => import('./curso/curso.module').then(m => m.CursoModule)        
   }
    
 ];
