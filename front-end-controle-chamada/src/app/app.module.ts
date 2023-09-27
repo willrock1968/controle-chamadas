@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ModalComponent } from './modal/modal.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { AuthModule } from './login/auth/auth.module';
 import { NivelCursoModule } from './nivel-curso/nivel-curso.module';
@@ -11,12 +14,14 @@ import { FooterModule } from './footer/footer.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModalComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AuthModule,
     NivelCursoModule,
     HeaderModule,
