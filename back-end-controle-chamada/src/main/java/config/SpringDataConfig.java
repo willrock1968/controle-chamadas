@@ -26,7 +26,7 @@ public class SpringDataConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/controle-chamadas?useTimezone=true&serverTimezone=UTC");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/controle_chamadas?useTimezone=true&serverTimezone=UTC");
         dataSource.setUsername("root");
         dataSource.setPassword("");
         return dataSource;
