@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NivelCursoService } from './nivel-curso.service';
+import { ModalService } from '../modal/modal.service';
 
 @Component({
   selector: 'app-nivel-curso',
@@ -14,7 +16,9 @@ export class NivelCursoComponent implements OnInit {
   
   constructor(
     private formBuilder: FormBuilder,   
-    private router: Router,    
+    private router: Router, 
+    private nivelCursoService : NivelCursoService,
+    private modalService: ModalService   
   ) { }
 
   ngOnInit(): void 
@@ -24,9 +28,19 @@ export class NivelCursoComponent implements OnInit {
     });   
   }  
 
-  onSubmit()
+  saveNivelCurso()
   {
-
+    this.nivelCursoService.saveNivelCurso(this.f.value)
+     .subscribe({
+       next:(res)=>{
+        console.log(res);
+        
+       },
+       error:(error)=>{
+        console.log(error);
+        this.modalService.showModal(error.error.error); 
+       }
+     })
   }  
 
 }
