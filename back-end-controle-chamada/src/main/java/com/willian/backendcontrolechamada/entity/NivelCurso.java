@@ -1,4 +1,4 @@
-package entity;
+package com.willian.backendcontrolechamada.entity;
 
 
 import java.io.Serializable;

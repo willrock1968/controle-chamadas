@@ -37,8 +37,8 @@ export class NivelCursoComponent implements OnInit {
         
        },
        error:(error)=>{
-        console.log(error);
-        this.modalService.showModal(error.error.error); 
+        console.log(error.message);
+        //this.modalService.showModal(error.error.message); 
        }
      })
   }  

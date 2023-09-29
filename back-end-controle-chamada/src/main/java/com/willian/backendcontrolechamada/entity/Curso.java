@@ -1,4 +1,4 @@
-package entity;
+package com.willian.backendcontrolechamada.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
