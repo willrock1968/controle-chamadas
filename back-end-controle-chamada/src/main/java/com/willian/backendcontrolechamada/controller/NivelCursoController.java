@@ -1,5 +1,7 @@
 package com.willian.backendcontrolechamada.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +20,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class NivelCursoController {
 	
 	@Autowired
-	private NivelCursoService nivelCursoService;	
+	private NivelCursoService nivelCursoService;
+	
+	@GetMapping("/getNivelCurso")
+	public List<NivelCurso> getNivelCurso()
+	{		
+		return nivelCursoService.getNivelCurso();		
+	}
 	
 	@PostMapping("/saveNivelCurso")
 	public NivelCurso saveNivelCurso(@RequestBody NivelCurso nivelCurso)

@@ -14,11 +14,10 @@ import { FooterModule } from './footer/footer.module';
 import { CursoModule } from './curso/curso.module';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent    
+    ModalComponent   
     
   ],
   imports: [

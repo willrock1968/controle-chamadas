@@ -11,36 +11,43 @@ import { ModalService } from '../modal/modal.service';
 })
 export class NivelCursoComponent implements OnInit {
 
-  f: FormGroup = new FormGroup({});
-  public login: any;
-  
+  public listNivelCurso: any;
+
   constructor(
-    private formBuilder: FormBuilder,   
-    private router: Router, 
-    private nivelCursoService : NivelCursoService,
-    private modalService: ModalService   
-  ) { }
+    private router: Router,
+    private nivelCursoService: NivelCursoService
+    ) { }
 
-  ngOnInit(): void 
+  ngOnInit(): void {  
+    this.getNivelCurso();
+  }
+
+  getNivelCurso()
   {
-    this.f = this.formBuilder.group({      
-      tipo: [null, [Validators.required, Validators.minLength(4)]]            
-    });   
-  }  
+    this.nivelCursoService.getNivelCurso()
+    .subscribe({
+      next:(res)=>{
+       
+       this.listNivelCurso = res;
+       console.log(this.listNivelCurso);
+       
+      },
+      error:(error)=>{
+       console.log(error.message);
+       //this.modalService.showModal(error.error.message); 
+      }
+    })
+   
+  }
 
-  saveNivelCurso()
+  newNivelCurso()
   {
-    this.nivelCursoService.saveNivelCurso(this.f.value)
-     .subscribe({
-       next:(res)=>{
-        console.log(res);
-        
-       },
-       error:(error)=>{
-        console.log(error.message);
-        //this.modalService.showModal(error.error.message); 
-       }
-     })
-  }  
+    this.router.navigate(['nivel-curso/form-nivel-curso']);
+  }
 
+  uptadeNivelCurso(id: any)
+  {
+      
+  }  
+  
 }

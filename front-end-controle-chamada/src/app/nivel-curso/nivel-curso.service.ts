@@ -17,6 +17,12 @@ export class NivelCursoService {
 
   constructor(private http: HttpClient) { }
   
+  
+  getNivelCurso()
+  {
+    return this.http.get(`${environment.apiUrl}/getNivelCurso`, this.header);
+  }
+
   saveNivelCurso(nivelCurso: any)
   {
     return this.http.post(`${environment.apiUrl}/saveNivelCurso`, nivelCurso, this.header);

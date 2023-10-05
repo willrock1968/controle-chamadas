@@ -1,0 +1,35 @@
+<!-- nivel-curso.component.html -->
+<app-header></app-header>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-content">
+                            <form [formGroup]="f" novalidate>
+                                <h1 class="center-align">Cadastro de Tipo de Curso</h1>
+                                <div class="row" [ngClass]="{'has-success': f.controls['tipo'].valid,
+                                'has-error': f.controls['tipo'].invalid && (f.controls['tipo'].touched || f.controls['tipo'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="tipo" type="text" formControlName="tipo" placeholder="tipo" autocomplete="current-tipo" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['tipo'].invalid && (f.controls['tipo'].touched || f.controls['tipo'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 offset-s3 center-align">
+                                        <button type="button" [disabled]="f.invalid" (click)="saveNivelCurso()" class="btn waves-effect waves-light">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>

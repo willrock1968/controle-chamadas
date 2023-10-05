@@ -1,35 +1,54 @@
-<!-- nivel-curso.component.html -->
-<app-header></app-header>
-<div class="app-body">
-    <main class="main d-flex align-items-center">
-        <div class="container">
+<div class="animated fadeIn">
+    
+    <!--/.row-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> <b>Meus</b> Processos  
+          </div>
+          <div class="card-body">
+           
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card">
-                        <div class="card-content">
-                            <form [formGroup]="f" novalidate>
-                                <h1 class="center-align">Cadastro de Tipo de Curso</h1>
-                                <div class="row" [ngClass]="{'has-success': f.controls['tipo'].valid,
-                                'has-error': f.controls['tipo'].invalid && (f.controls['tipo'].touched || f.controls['tipo'].dirty)}">
-                                    <div class="input-field col s12">
-                                        <input id="tipo" type="text" formControlName="tipo" placeholder="tipo" autocomplete="current-tipo" required>
-                                        
-                                        <span class="text-danger" *ngIf="f.controls['tipo'].invalid && (f.controls['tipo'].touched || f.controls['tipo'].dirty)">
-                                            Campo obrigatório com no mínimo 4 caracteres
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s6 offset-s3 center-align">
-                                        <button type="button" [disabled]="f.invalid" (click)="saveNivelCurso()" class="btn waves-effect waves-light">Acessar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                <button (click)="newNivelCurso()" type="button" class="btn btn-primary">Novo Nível Curso <i class="fa fa-exchange fa-lg mt-1"></i></button>
+              </div>
+            </div><br>
+                       
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Id</th>                
+                  <th>Tipo</th>
+                  <th>Alterar Nível Curso</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let nc of listNivelCurso">
+                  <td>{{nc.idnivel_curso}}</td>                  
+                  <td>{{nc.tipo}}</td>
+                  <td><button (click)="uptadeNivelCurso(nc.id_nivel_curso)" class="btn btn-warning">Alterar</button></td>
+                 
+                </tr>                
+              </tbody>
+            </table>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
-    </main>
-</div>
-<app-footer></app-footer>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>
