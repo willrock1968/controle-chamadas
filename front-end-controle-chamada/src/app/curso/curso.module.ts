@@ -5,13 +5,15 @@ import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { CursoRoutingModule } from './curso-routing.module';
-import { CursoComponent } from './curso.component';
-import { CursoService } from './curso.service';
+
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
+import { CursoService } from './curso.service';
+import { CursoComponent } from './curso.component';
+import { FormCursoComponent } from './form-curso/form-curso.component';
 
 @NgModule({
-  declarations: [CursoComponent],
+  declarations: [CursoComponent, FormCursoComponent],
   imports: [
     CommonModule,
     FormsModule,

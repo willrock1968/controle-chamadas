@@ -21,6 +21,14 @@ public class Curso {
 	@JoinColumn(name = "idnivel_curso", referencedColumnName = "idnivel_curso")
 	private NivelCurso nivelCurso;
 
+	public NivelCurso getNivelCurso() {
+		return nivelCurso;
+	}
+
+	public void setNivelCurso(NivelCurso nivelCurso) {
+		this.nivelCurso = nivelCurso;
+	}
+
 	public int getIdcurso() {
 		return idcurso;
 	}

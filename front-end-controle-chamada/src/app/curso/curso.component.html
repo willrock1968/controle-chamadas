@@ -1,56 +1,60 @@
-<!-- nivel-curso.component.html -->
-<app-header></app-header>
-<div class="app-body">
-    <main class="main d-flex align-items-center">
-        <div class="container">
+<div class="animated fadeIn">
+    
+    <!--/.row-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> <b>Meus</b> Cursos  
+          </div>
+          <div class="card-body">
+           
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="card">
-                        <div class="card-content">
-                            <form [formGroup]="f" novalidate>
-                                <h1 class="center-align">Cadastro de Curso</h1>
-                                <div class="row" [ngClass]="{'has-success': f.controls['nome_curso'].valid,
-                                'has-error': f.controls['nome_curso'].invalid && (f.controls['nome_curso'].touched || f.controls['nome_curso'].dirty)}">
-                                    <div class="input-field col s12">
-                                        <input id="nome_curso" type="text" formControlName="nome_curso" placeholder="Nome do Curso" autocomplete="current-nome_curso" required>
-                                        
-                                        <span class="text-danger" *ngIf="f.controls['nome_curso'].invalid && (f.controls['nome_curso'].touched || f.controls['nome_curso'].dirty)">
-                                            Campo obrigatório com no mínimo 4 caracteres
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="row" [ngClass]="{'has-success': f.controls['carga_horaria'].valid,
-                                'has-error': f.controls['carga_horaria'].invalid && (f.controls['carga_horaria'].touched || f.controls['carga_horaria'].dirty)}">
-                                    <div class="input-field col s12">
-                                        <input id="carga_horaria" type="text" formControlName="carga_horaria" placeholder="Carga Horária" autocomplete="current-carga_horaria" required>
-                                        
-                                        <span class="text-danger" *ngIf="f.controls['carga_horaria'].invalid && (f.controls['carga_horaria'].touched || f.controls['carga_horaria'].dirty)">
-                                            Campo obrigatório com no mínimo 2 caracteres
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="row" [ngClass]="{'has-success': f.controls['porcentagem_tolerancia_falta'].valid,
-                                'has-error': f.controls['porcentagem_tolerancia_falta'].invalid && (f.controls['porcentagem_tolerancia_falta'].touched || f.controls['porcentagem_tolerancia_falta'].dirty)}">
-                                    <div class="input-field col s12">
-                                        <input id="porcentagem_tolerancia_falta" type="text" formControlName="porcentagem_tolerancia_falta" placeholder="Porcentagem aceitável de falta" autocomplete="current-porcentagem_tolerancia_falta" required>
-                                        
-                                        <span class="text-danger" *ngIf="f.controls['porcentagem_tolerancia_falta'].invalid && (f.controls['porcentagem_tolerancia_falta'].touched || f.controls['porcentagem_tolerancia_falta'].dirty)">
-                                            Campo obrigatório com no mínimo 4 caracteres
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s6 offset-s3 center-align">
-                                        <button type="button" [disabled]="f.invalid" (click)="onSubmit()" class="btn waves-effect waves-light">Cadastrar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+              <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                <button (click)="newCurso()" type="button" class="btn btn-primary">Novo Nível Curso <i class="fa fa-exchange fa-lg mt-1"></i></button>
+              </div>
+            </div><br>
+                       
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Id</th>  
+                  <th>Nome do Curso</th>
+                  <th>Carga Horaria</th>
+                  <th>Tolerância de Faltas Permitidas</th>
+                  <th>Tipo de Curso</th>
+                  <th>Alterar Curso</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let c of listCurso">
+                  <td>{{c.idcurso }}</td>                  
+                  <td>{{c.nome_curso}}</td>
+                  <td>{{c.carga_horaria}}</td>
+                  <td>{{c.porcentagem_tolerancia_falta}}</td>
+                  <td>{{c.idnivel_curso }}</td>
+                  <td><button (click)="uptadeCurso(c.idcurso)" class="btn btn-warning">Alterar</button></td>
+                 
+                </tr>                
+              </tbody>
+            </table>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
-    </main>
-</div>
-<app-footer></app-footer>
-
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>

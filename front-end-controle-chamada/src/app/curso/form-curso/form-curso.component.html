@@ -1,0 +1,66 @@
+<!-- form-curso.component.html -->
+<app-header></app-header>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-content">
+                            <form [formGroup]="f" novalidate>
+                                <h1 class="center-align">Cadastro de Curso</h1>
+                                  
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="nivel_curso" [ngClass]="{'active': f.get('nivel_curso')?.value !== ''}">Nível do Curso</label>
+                                        <select formControlName="nivelCurso" class="browser-default">
+                                            <option *ngFor="let nivel of listNivelCurso" [ngValue]="nivel.idnivel_curso">{{ nivel.tipo }}</option>
+                                        </select>
+                                    </div>
+                                </div>                      
+                                
+                                <div class="row" [ngClass]="{'has-success': f.controls['nome_curso'].valid,
+                                'has-error': f.controls['nome_curso'].invalid && (f.controls['nome_curso'].touched || f.controls['nome_curso'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="nome_curso" type="text" formControlName="nome_curso" placeholder="Nome do Curso" autocomplete="current-nome_curso" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['nome_curso'].invalid && (f.controls['nome_curso'].touched || f.controls['nome_curso'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row" [ngClass]="{'has-success': f.controls['carga_horaria'].valid,
+                                'has-error': f.controls['carga_horaria'].invalid && (f.controls['carga_horaria'].touched || f.controls['carga_horaria'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="carga_horaria" type="text" formControlName="carga_horaria" placeholder="Carga Horária" autocomplete="current-carga_horaria" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['carga_horaria'].invalid && (f.controls['carga_horaria'].touched || f.controls['carga_horaria'].dirty)">
+                                            Campo obrigatório com no mínimo 2 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row" [ngClass]="{'has-success': f.controls['porcentagem_tolerancia_falta'].valid,
+                                'has-error': f.controls['porcentagem_tolerancia_falta'].invalid && (f.controls['porcentagem_tolerancia_falta'].touched || f.controls['porcentagem_tolerancia_falta'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="porcentagem_tolerancia_falta" type="text" formControlName="porcentagem_tolerancia_falta" placeholder="Porcentagem aceitável de falta" autocomplete="current-porcentagem_tolerancia_falta" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['porcentagem_tolerancia_falta'].invalid && (f.controls['porcentagem_tolerancia_falta'].touched || f.controls['porcentagem_tolerancia_falta'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 offset-s3 center-align">
+                                        <button type="button" [disabled]="f.invalid" (click)="saveCurso()" class="btn waves-effect waves-light">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>
+

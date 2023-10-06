@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CursoService } from './curso.service';
+import { NivelCursoService } from '../nivel-curso/nivel-curso.service';
 
 @Component({
   selector: 'app-curso',
@@ -9,25 +11,68 @@ import { Router } from '@angular/router';
 })
 export class CursoComponent implements OnInit {
 
-  f: FormGroup = new FormGroup({});
-  public login: any;
-  
-  constructor(
-    private formBuilder: FormBuilder,   
-    private router: Router,    
+  public listNivelCurso: any;
+  public listCurso: any;
+    
+  constructor(       
+    private router: Router,
+    private cursoService: CursoService,
+    private nivelCursoService: NivelCursoService   
   ) { }
 
   ngOnInit(): void 
   {
-    this.f = this.formBuilder.group({      
-      nome_curso: [null, [Validators.required, Validators.minLength(4)]],
-      carga_horaria: [null, [Validators.required, Validators.minLength(2)]],
-      porcentagem_tolerancia_falta: [null, [Validators.required, Validators.minLength(2)]]            
-    });   
+    this.getNivelCurso();
+    this.getCurso();
   }  
 
   onSubmit()
   {
 
   } 
+
+  getNivelCurso()
+  {
+    this.nivelCursoService.getNivelCurso()
+    .subscribe({
+      next:(res)=>{
+       
+       this.listNivelCurso = res;
+       console.log(this.listNivelCurso);
+       
+      },
+      error:(error)=>{
+       console.log(error.message);
+       //this.modalService.showModal(error.error.message); 
+      }
+    })
+   
+  }
+ 
+  getCurso()
+  {
+    this.cursoService.getCurso()
+    .subscribe({
+      next:(res)=>{
+       
+       this.listCurso = res;
+       console.log(this.listNivelCurso);
+       
+      },
+      error:(error)=>{
+       console.log(error.message);
+       //this.modalService.showModal(error.error.message); 
+      }
+    })   
+  }
+
+  newCurso()
+  {
+    this.router.navigate(['curso/form-curso']);
+  }
+
+  uptadeCurso(id: any)
+  {
+      
+  }  
 }

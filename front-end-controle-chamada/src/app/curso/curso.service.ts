@@ -12,5 +12,15 @@ export class CursoService {
      'Content-Type': 'application/json'    
   })}
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }  
+  
+  getCurso()
+  {
+    return this.http.get(`${environment.apiUrl}/getCurso`, this.header);
+  }
+
+  saveCurso(curso: any)
+  {
+    return this.http.post(`${environment.apiUrl}/saveCurso`, curso, this.header);
+  }
 }
