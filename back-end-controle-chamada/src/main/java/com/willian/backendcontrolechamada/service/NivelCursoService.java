@@ -1,6 +1,8 @@
 package com.willian.backendcontrolechamada.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +27,13 @@ public class NivelCursoService {
     public NivelCurso saveNivelCurso(NivelCurso nivelCurso) {
         
     	return nivelCursoRepository.save(nivelCurso);    	
-    }    
-    
+    }
+
+    public NivelCurso findById(int idNivelCurso) {
+        
+    	return  nivelCursoRepository.findById(idNivelCurso).orElse(null);        
+    }
+      
 }
 
 

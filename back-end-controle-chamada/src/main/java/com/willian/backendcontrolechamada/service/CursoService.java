@@ -22,5 +22,6 @@ public class CursoService {
     public Curso saveCurso(Curso curso) {
         
     	return cursoRepository.save(curso);    	
-    }    
+    }        
+    
 }

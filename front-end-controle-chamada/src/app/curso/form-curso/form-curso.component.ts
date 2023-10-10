@@ -23,12 +23,12 @@ export class FormCursoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void 
-  {
+  {    
     this.f = this.formBuilder.group({
-      nivelCurso: [null, [Validators.required, Validators.minLength(4)]],      
+      idNivel: [null, [Validators.required, Validators.minLength(4)]], // Campo de nível de curso
       nome_curso: [null, [Validators.required, Validators.minLength(4)]],
       carga_horaria: [null, [Validators.required, Validators.minLength(2)]],
-      porcentagem_tolerancia_falta: [null, [Validators.required, Validators.minLength(2)]]            
+      porcentagem_tolerancia_falta: [null, [Validators.required, Validators.minLength(2)]],
     });  
     
     this.getNivelCurso();
@@ -36,10 +36,12 @@ export class FormCursoComponent implements OnInit {
 
   saveCurso()
   {    
+    console.log(this.f.value);
+    console.log('front-end');
     this.cursoService.saveCurso(this.f.value)
      .subscribe({
        next:(res)=>{
-        
+        console.log(res);
         this.router.navigate(['curso']);
         
        },

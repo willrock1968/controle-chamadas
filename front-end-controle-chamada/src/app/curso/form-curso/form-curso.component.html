@@ -12,12 +12,12 @@
                                   
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <label for="nivel_curso" [ngClass]="{'active': f.get('nivel_curso')?.value !== ''}">Nível do Curso</label>
-                                        <select formControlName="nivelCurso" class="browser-default">
+                                        <label for="nivel_curso" [ngClass]="{'active': f.get('idNivel')?.value !== ''}">Nível do Curso</label>
+                                        <select formControlName="idNivel" class="browser-default">
                                             <option *ngFor="let nivel of listNivelCurso" [ngValue]="nivel.idnivel_curso">{{ nivel.tipo }}</option>
                                         </select>
                                     </div>
-                                </div>                      
+                                </div>                                                   
                                 
                                 <div class="row" [ngClass]="{'has-success': f.controls['nome_curso'].valid,
                                 'has-error': f.controls['nome_curso'].invalid && (f.controls['nome_curso'].touched || f.controls['nome_curso'].dirty)}">
