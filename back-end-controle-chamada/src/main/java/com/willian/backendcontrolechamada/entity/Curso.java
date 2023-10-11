@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Curso {
@@ -15,6 +16,7 @@ public class Curso {
 	@GeneratedValue
 	private int idcurso;
 	
+	@Transient
 	private int idNivel;
 	private String nome_curso;
 	private String carga_horaria;
