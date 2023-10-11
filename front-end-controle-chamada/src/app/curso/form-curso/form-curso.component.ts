@@ -12,8 +12,7 @@ import { NivelCursoService } from '../../nivel-curso/nivel-curso.service';
 export class FormCursoComponent implements OnInit {
 
   public listNivelCurso: any;
-  f: FormGroup = new FormGroup({});
-  public login: any;
+  f: FormGroup = new FormGroup({});  
   
   constructor(
     private formBuilder: FormBuilder,   
@@ -35,37 +34,27 @@ export class FormCursoComponent implements OnInit {
   }  
 
   saveCurso()
-  {    
-    console.log(this.f.value);
-    console.log('front-end');
+  {      
     this.cursoService.saveCurso(this.f.value)
      .subscribe({
-       next:(res)=>{
-        console.log(res);
-        this.router.navigate(['curso']);
-        
+       next:(res)=>{        
+        this.router.navigate(['curso']);        
        },
        error:(error)=>{
-        console.log(error.message);
-        //this.modalService.showModal(error.error.message); 
+        console.log(error.message);       
        }
-     })
-   
+     })   
   } 
 
   getNivelCurso()
   {
     this.nivelCursoService.getNivelCurso()
     .subscribe({
-      next:(res)=>{
-       
-       this.listNivelCurso = res;
-       console.log(this.listNivelCurso);
-       
+      next:(res)=>{       
+       this.listNivelCurso = res; 
       },
       error:(error)=>{
-       console.log(error.message);
-       //this.modalService.showModal(error.error.message); 
+       console.log(error.message);       
       }
     })
    

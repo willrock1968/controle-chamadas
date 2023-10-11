@@ -16,7 +16,7 @@ public class CursoService {
 	
 	public List<Curso> getCurso() {
         
-    	return cursoRepository.findAll();    	
+    	return cursoRepository.consultaCursoETipoNivel();   	
     } 
 	
     public Curso saveCurso(Curso curso) {

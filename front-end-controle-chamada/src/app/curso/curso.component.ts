@@ -35,15 +35,11 @@ export class CursoComponent implements OnInit {
   {
     this.nivelCursoService.getNivelCurso()
     .subscribe({
-      next:(res)=>{
-       
-       this.listNivelCurso = res;
-       console.log(this.listNivelCurso);
-       
+      next:(res)=>{       
+       this.listNivelCurso = res; 
       },
       error:(error)=>{
-       console.log(error.message);
-       //this.modalService.showModal(error.error.message); 
+       console.log(error.message);       
       }
     })
    
@@ -55,6 +51,7 @@ export class CursoComponent implements OnInit {
     .subscribe({
       next:(res)=>{
        
+        console.log(res);
        this.listCurso = res;
        console.log(this.listNivelCurso);
        
