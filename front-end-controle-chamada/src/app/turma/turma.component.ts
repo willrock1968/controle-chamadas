@@ -50,7 +50,7 @@ export class TurmaComponent implements OnInit {
     .subscribe({
       next:(res)=>{       
       
-       this.listCurso = res;
+       this.listTurma = res;
        console.log(this.listTurma);       
       },
       error:(error)=>{
