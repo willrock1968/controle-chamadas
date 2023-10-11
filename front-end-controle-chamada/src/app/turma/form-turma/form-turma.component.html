@@ -1,0 +1,90 @@
+<!-- form-curso.component.html -->
+<app-header></app-header>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-content">
+                            <form [formGroup]="f" novalidate>
+                                <h1 class="center-align">Cadastro de Turma</h1>
+                                  
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="curso" [ngClass]="{'active': f.get('idCurso')?.value !== ''}">Curso</label>
+                                        <select formControlName="idCurso" class="browser-default">
+                                            <option *ngFor="let curso of listCurso" [ngValue]="curso.idcurso">{{ curso.nome_curso }}</option>
+                                        </select>
+                                    </div>
+                                </div>                                                   
+                                <div class="row" [ngClass]="{'has-success': f.controls['codigo'].valid,
+                                'has-error': f.controls['codigo'].invalid && (f.controls['codigo'].touched || f.controls['codigo'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="codigo" type="text" formControlName="codigo" placeholder="Código" autocomplete="current-codigo" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['codigo'].invalid && (f.controls['codigo'].touched || f.controls['codigo'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row" [ngClass]="{'has-success': f.controls['nome_turma'].valid,
+                                'has-error': f.controls['nome_turma'].invalid && (f.controls['nome_turma'].touched || f.controls['nome_turma'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="nome_curso" type="text" formControlName="nome_turma" placeholder="Nome da Turma" autocomplete="current-nome_turma" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['nome_turma'].invalid && (f.controls['nome_turma'].touched || f.controls['nome_turma'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row" [ngClass]="{'has-success': f.controls['dias_semana'].valid,
+                                'has-error': f.controls['dias_semana'].invalid && (f.controls['dias_semana'].touched || f.controls['dias_semana'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="dias_semana" type="text" formControlName="dias_semana" placeholder="Dias da semana" autocomplete="current-dias_semana" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['dias_semana'].invalid && (f.controls['dias_semana'].touched || f.controls['dias_semana'].dirty)">
+                                            Campo obrigatório com no mínimo 5 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row" [ngClass]="{'has-success': f.controls['horario_aulas'].valid,
+                                'has-error': f.controls['horario_aulas'].invalid && (f.controls['horario_aulas'].touched || f.controls['horario_aulas'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="horario_aulas" type="text" formControlName="horario_aulas" placeholder="Horário das Aulas" autocomplete="current-horario_aulas" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['horario_aulas'].invalid && (f.controls['horario_aulas'].touched || f.controls['horario_aulas'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row" [ngClass]="{'has-success': f.controls['qtde_alunos_ativos'].valid,
+                                'has-error': f.controls['qtde_alunos_ativos'].invalid && (f.controls['qtde_alunos_ativos'].touched || f.controls['qtde_alunos_ativos'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="qtde_alunos_ativos" type="text" formControlName="qtde_alunos_ativos" placeholder="Alunos Ativos" autocomplete="current-qtde_alunos_ativos" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['horario_aulas'].invalid && (f.controls['qtde_alunos_ativos'].touched || f.controls['qtde_alunos_ativos'].dirty)">
+                                            Campo obrigatório com no mínimo 2 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col s6 offset-s3 center-align">
+                                        <button type="button" [disabled]="f.invalid" (click)="saveTurma()" class="btn waves-effect waves-light">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>
+
+

@@ -1,7 +1,5 @@
 package com.willian.backendcontrolechamada.entity;
 
-import java.util.Optional;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -19,8 +17,8 @@ public class Curso {
 	@Transient
 	private int idNivel;
 	private String nome_curso;
-	private String carga_horaria;
-	private String porcentagem_tolerancia_falta;
+	private int carga_horaria;
+	private int porcentagem_tolerancia_falta;
 		
 	@ManyToOne
     @JoinColumn(name = "idnivel_curso", referencedColumnName = "idnivel_curso")
@@ -50,19 +48,19 @@ public class Curso {
 		this.nome_curso = nome_curso;
 	}
 
-	public String getCarga_horaria() {
+	public int getCarga_horaria() {
 		return carga_horaria;
 	}
 
-	public void setCarga_horaria(String carga_horaria) {
+	public void setCarga_horaria(int carga_horaria) {
 		this.carga_horaria = carga_horaria;
 	}
 
-	public String getPorcentagem_tolerancia_falta() {
+	public int getPorcentagem_tolerancia_falta() {
 		return porcentagem_tolerancia_falta;
 	}
 
-	public void setPorcentagem_tolerancia_falta(String porcentagem_tolerancia_falta) {
+	public void setPorcentagem_tolerancia_falta(int porcentagem_tolerancia_falta) {
 		this.porcentagem_tolerancia_falta = porcentagem_tolerancia_falta;
 	}
 
@@ -73,7 +71,5 @@ public class Curso {
 	public void setIdNivel(int idNivel) {
 		this.idNivel = idNivel;
 	}
-
-		
 		
 }

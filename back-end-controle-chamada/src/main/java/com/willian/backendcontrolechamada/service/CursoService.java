@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.willian.backendcontrolechamada.entity.Curso;
+import com.willian.backendcontrolechamada.entity.NivelCurso;
 import com.willian.backendcontrolechamada.repository.CursoRepository;
 
 @Service
@@ -23,5 +24,10 @@ public class CursoService {
         
     	return cursoRepository.save(curso);    	
     }        
+    
+  public Curso findById(int idCurso) {
+        
+    	return  cursoRepository.findById(idCurso).orElse(null);        
+    }
     
 }

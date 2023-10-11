@@ -12,23 +12,25 @@ import { NivelCursoModule } from './nivel-curso/nivel-curso.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { CursoModule } from './curso/curso.module';
+import { TurmaModule } from './turma/turma.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent   
+    ModalComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    AuthModule,
-    NivelCursoModule,
+    HttpClientModule,    
     HeaderModule,
     FooterModule,
-    CursoModule
+    AuthModule,
+    NivelCursoModule,
+    CursoModule,
+    TurmaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
