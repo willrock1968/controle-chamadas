@@ -1,0 +1,51 @@
+<!-- form-curso.component.html -->
+<app-header></app-header>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-content">
+                            <form [formGroup]="f" novalidate>
+                                <h1 class="center-align">Cadastro de Aluno</h1>
+                                  
+                                                                                  
+                                <div class="row" [ngClass]="{'has-success': f.controls['ra'].valid,
+                                'has-error': f.controls['ra'].invalid && (f.controls['ra'].touched || f.controls['ra'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="ra" type="text" formControlName="ra" placeholder="RA" autocomplete="current-ra" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['ra'].invalid && (f.controls['ra'].touched || f.controls['ra'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row" [ngClass]="{'has-success': f.controls['nome_aluno'].valid,
+                                'has-error': f.controls['nome_aluno'].invalid && (f.controls['nome_aluno'].touched || f.controls['nome_aluno'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="nome_aluno" type="text" formControlName="nome_aluno" placeholder="Nome do Aluno" autocomplete="current-nome_aluno" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['nome_aluno'].invalid && (f.controls['nome_aluno'].touched || f.controls['nome_aluno'].dirty)">
+                                            Campo obrigatório com no mínimo 4 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 offset-s3 center-align">
+                                        <button type="button" [disabled]="f.invalid" (click)="saveAluno()" class="btn waves-effect waves-light">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>
+
+
+

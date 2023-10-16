@@ -20,6 +20,10 @@ export const routes: Routes =
   {
     path: 'turma',
     loadChildren: () => import('./turma/turma.module').then(m => m.TurmaModule)        
+  },  
+  {
+    path: 'aluno',
+    loadChildren: () => import('./aluno/aluno.module').then(m => m.AlunoModule)        
   }
    
 ];

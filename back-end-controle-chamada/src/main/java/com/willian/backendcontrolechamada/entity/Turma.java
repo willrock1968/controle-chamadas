@@ -7,7 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
@@ -62,6 +61,7 @@ public class Turma {
 	public String getCodigo() {
 		return codigo;
 	}
+	
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
@@ -69,6 +69,7 @@ public class Turma {
 	public String getNome_turma() {
 		return nome_turma;
 	}
+	
 	public void setNome_turma(String nome_turma) {
 		this.nome_turma = nome_turma;
 	}
@@ -76,6 +77,7 @@ public class Turma {
 	public String getDias_semana() {
 		return dias_semana;
 	}
+	
 	public void setDias_semana(String dias_semana) {
 		this.dias_semana = dias_semana;
 	}
@@ -83,6 +85,7 @@ public class Turma {
 	public LocalTime getHorario_aulas() {
 		return horario_aulas;
 	}
+	
 	public void setHorario_aulas(LocalTime horario_aulas) {
 		this.horario_aulas = horario_aulas;
 	}

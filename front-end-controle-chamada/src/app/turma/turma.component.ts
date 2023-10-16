@@ -48,10 +48,8 @@ export class TurmaComponent implements OnInit {
   {
     this.turmaService.getTurma()
     .subscribe({
-      next:(res)=>{       
-      
-       this.listTurma = res;
-       console.log(this.listTurma);       
+      next:(res)=>{
+       this.listTurma = res;       
       },
       error:(error)=>{
        console.log(error.message);       

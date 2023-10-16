@@ -13,6 +13,8 @@ import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { CursoModule } from './curso/curso.module';
 import { TurmaModule } from './turma/turma.module';
+import { AlunoModule } from './aluno/aluno.module';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { TurmaModule } from './turma/turma.module';
     AuthModule,
     NivelCursoModule,
     CursoModule,
-    TurmaModule
+    TurmaModule,
+    AlunoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
