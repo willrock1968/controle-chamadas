@@ -1,12 +1,15 @@
 package com.willian.backendcontrolechamada.entity;
 
 import java.time.LocalTime;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 
 @Entity
@@ -28,6 +31,18 @@ public class Turma {
 	private LocalTime horario_aulas;
 	private int qtde_alunos_ativos;
 	
+	@OneToMany(mappedBy = "turma")
+	private List<Matricula> matricula;
+	
+	
+	public List<Matricula> getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(List<Matricula> matricula) {
+		this.matricula = matricula;
+	}
+
 	public int getIdturma() {
 		return idturma;
 	}
