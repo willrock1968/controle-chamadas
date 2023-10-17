@@ -20,7 +20,8 @@
                 <tr>
                   <th>Id</th> 
                   <th>RA</th> 
-                  <th>Aluno</th>                 
+                  <th>Aluno</th>  
+                  <th>Matricular</th>                 
                   <th>Alterar Aluno</th>                  
                 </tr>
               </thead>
@@ -28,7 +29,8 @@
                 <tr *ngFor="let a of listAluno">
                   <td>{{a.idaluno}}</td>                  
                   <td>{{a.ra}}</td>
-                  <td>{{a.nome_aluno}}</td>                                   
+                  <td>{{a.nome_aluno}}</td>  
+                  <td><button (click)="matriculaAluno(a.idaluno)" class="btn btn-success">Matricular</button></td>                                 
                   <td><button (click)="uptadeAluno(a.idaluno)" class="btn btn-warning">Alterar</button></td>
                  
                 </tr>                

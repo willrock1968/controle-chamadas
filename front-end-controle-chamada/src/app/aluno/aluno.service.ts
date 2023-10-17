@@ -20,6 +20,11 @@ export class AlunoService {
     return this.http.get(`${environment.apiUrl}/getAluno`, this.header);
   }
 
+  getAlunoById(idaluno: any)
+  {
+    return this.http.post(`${environment.apiUrl}/getAlunoById`, idaluno, this.header);
+  }
+
   saveAluno(aluno: any)
   {
     return this.http.post(`${environment.apiUrl}/saveAluno`, aluno, this.header);

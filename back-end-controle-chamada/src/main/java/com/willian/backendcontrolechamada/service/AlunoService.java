@@ -19,6 +19,11 @@ public class AlunoService {
 		return alunoRepository.findAll();
 	}
 	
+	public Aluno  getAlunoById(int idaluno)
+	{
+		return alunoRepository.getAlunoByIdy(idaluno);
+	}
+	
 	public Aluno saveAluno(Aluno aluno)
 	{
 		return alunoRepository.save(aluno);

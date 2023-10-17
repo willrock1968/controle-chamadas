@@ -31,5 +31,11 @@ public class AlunoController {
 		return alunoService.saveAluno(aluno);
 	}
 
+	@PostMapping("/getAlunoById")
+	private Aluno getAlunoById(@RequestBody int idaluno)
+	{
+		return alunoService.getAlunoById(idaluno);
+	}
+	
 
 }

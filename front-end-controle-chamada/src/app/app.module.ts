@@ -15,8 +15,6 @@ import { CursoModule } from './curso/curso.module';
 import { TurmaModule } from './turma/turma.module';
 import { AlunoModule } from './aluno/aluno.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

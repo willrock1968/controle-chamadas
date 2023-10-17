@@ -44,4 +44,9 @@ export class AlunoComponent implements OnInit {
       
   }  
 
+  matriculaAluno(idaluno: any)
+  {
+    this.router.navigate(['matricula-aluno', idaluno]);    
+  }
+
 }
