@@ -1,13 +1,9 @@
 package com.willian.backendcontrolechamada.entity;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+
 
 @Entity
 public class Aluno {
@@ -23,6 +19,7 @@ public class Aluno {
 	public int getIdaluno() {
 		return idaluno;
 	}
+	
 	public void setIdaluno(int idaluno) {
 		this.idaluno = idaluno;
 	}

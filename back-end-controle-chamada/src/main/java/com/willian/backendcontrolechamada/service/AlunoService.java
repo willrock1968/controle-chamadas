@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.willian.backendcontrolechamada.dto.AlunoMatriculaDTO;
 import com.willian.backendcontrolechamada.entity.Aluno;
 import com.willian.backendcontrolechamada.repository.AlunoRepository;
 
@@ -14,9 +15,9 @@ public class AlunoService {
 	@Autowired
 	private AlunoRepository alunoRepository;
 	
-	public List<Aluno> getAluno()
+	public List<Object[]> getAlunoMatricula()
 	{
-		return alunoRepository.getAluno();
+		return alunoRepository.getAlunoMatricula();
 	}
 	
 	public Aluno  getAlunoById(int idaluno)

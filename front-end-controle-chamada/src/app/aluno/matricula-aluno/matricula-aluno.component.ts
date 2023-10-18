@@ -40,10 +40,8 @@ export class MatriculaAlunoComponent implements OnInit {
     .subscribe({
       next:(res)=>{       
         this.aluno = res;        
-        const alunoJson = JSON.stringify(this.aluno);
-        // Armazena a string JSON no localStorage
-        localStorage.setItem('aluno', alunoJson);
-       
+        const alunoJson = JSON.stringify(this.aluno);        
+        localStorage.setItem('aluno', alunoJson);       
       },
       error:(error)=>{
        console.log(error.message);       

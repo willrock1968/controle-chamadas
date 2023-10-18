@@ -18,15 +18,16 @@ export class AlunoComponent implements OnInit {
 
   ngOnInit(): void 
   {
-    this.getAluno();    
+    this.getAlunoMatricula();    
   }    
 
-  getAluno()
+  getAlunoMatricula()
   {
-    this.alunoService.getAluno()
+    this.alunoService.getAlunoMatricula()
     .subscribe({
       next:(res)=>{       
        this.listAluno = res; 
+       console.log(this.listAluno);
       },
       error:(error)=>{
        console.log(error.message);       

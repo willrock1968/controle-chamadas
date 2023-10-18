@@ -15,9 +15,9 @@ export class AlunoService {
 
   constructor(private http: HttpClient) { }  
   
-  getAluno()
+  getAlunoMatricula()
   {
-    return this.http.get(`${environment.apiUrl}/getAluno`, this.header);
+    return this.http.get(`${environment.apiUrl}/getAlunoMatricula`, this.header);
   }
 
   getAlunoById(idaluno: any)
