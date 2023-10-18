@@ -29,19 +29,24 @@
               </thead>
               <tbody>
                 <tr *ngFor="let a of listAluno">
-                  <td>{{a[0].idaluno}}</td>                  
-                  <td>{{a[0].ra}}</td>
-                  <td>{{a[0].nome_aluno}}</td>  
+                  <td>{{a.aluno.idaluno}}</td>                  
+                  <td>{{a.aluno.ra}}</td>
+                  <td>{{a.aluno.nome_aluno}}</td>  
                   <td>
-                    <span *ngIf="a[1] === null; else alunoMatriculado">Aluno não matriculado</span>
+                    <span *ngIf="a.matriculas.length === 0; else alunoMatriculado">Aluno não matriculado</span>
                     <ng-template #alunoMatriculado>Aluno matriculado</ng-template>
+
                   </td> 
                   <td>
-                    <span *ngIf="a[1] != null">{{a[1].turma.nome_turma}}</span>                    
+                    <span *ngIf="a.matriculas.length != 0">
+                      <span *ngFor="let matricula of a.matriculas">
+                        {{matricula.turma.nome_turma}}, 
+                      </span>
+                    </span>                    
 
                   </td>   
-                  <td><button (click)="matriculaAluno(a[0].idaluno)" class="btn btn-success">Matricular</button></td>                                 
-                  <td><button (click)="uptadeAluno(a[0].idaluno)" class="btn btn-warning">Alterar</button></td>
+                  <td><button (click)="matriculaAluno(a.aluno.idaluno)" class="btn btn-success">Matricular</button></td>                                 
+                  <td><button (click)="uptadeAluno(a.aluno.idaluno)" class="btn btn-warning">Alterar</button></td>
                  
                 </tr>                
               </tbody>

@@ -75,7 +75,7 @@ export class MatriculaAlunoComponent implements OnInit {
      .subscribe({
        next:(res)=>{     
         console.log(res);   
-        //this.router.navigate(['aluno']);        
+        this.router.navigate(['aluno']);        
        },
        error:(error)=>{
         console.log(error.message);       
