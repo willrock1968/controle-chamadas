@@ -20,9 +20,7 @@ public class NivelCurso implements Serializable{
 	
 	private String tipo;
 	
-	@OneToMany
-	private List<Curso> cursos;
-
+	
 	public int getIdnivel_curso() {
 		return idnivel_curso;
 	}
@@ -38,13 +36,5 @@ public class NivelCurso implements Serializable{
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
-	public List<Curso> getCursos() {
-		return cursos;
-	}
-
-	public void setCursos(List<Curso> cursos) {
-		this.cursos = cursos;
-	}
-		
+			
 }
