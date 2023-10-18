@@ -18,5 +18,4 @@ public interface AlunoRepository extends JpaRepository<Aluno, Integer>{
     @Query("SELECT a, m FROM Aluno a LEFT JOIN Matricula m ON a = m.aluno")
     List<Object[]> getAlunoMatricula();
 
-
 }

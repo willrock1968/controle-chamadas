@@ -21,17 +21,27 @@
                   <th>Id</th> 
                   <th>RA</th> 
                   <th>Aluno</th>  
+                  <th>Status de Matricula</th>  
+                  <th>Turmas Matriculadas</th>
                   <th>Matricular</th>                 
                   <th>Alterar Aluno</th>                  
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let a of listAluno">
-                  <td>{{a.idaluno}}</td>                  
-                  <td>{{a.ra}}</td>
-                  <td>{{a.nome_aluno}}</td>  
-                  <td><button (click)="matriculaAluno(a.idaluno)" class="btn btn-success">Matricular</button></td>                                 
-                  <td><button (click)="uptadeAluno(a.idaluno)" class="btn btn-warning">Alterar</button></td>
+                  <td>{{a[0].idaluno}}</td>                  
+                  <td>{{a[0].ra}}</td>
+                  <td>{{a[0].nome_aluno}}</td>  
+                  <td>
+                    <span *ngIf="a[1] === null; else alunoMatriculado">Aluno não matriculado</span>
+                    <ng-template #alunoMatriculado>Aluno matriculado</ng-template>
+                  </td> 
+                  <td>
+                    <span *ngIf="a[1] != null">{{a[1].turma.nome_turma}}</span>                    
+
+                  </td>   
+                  <td><button (click)="matriculaAluno(a[0].idaluno)" class="btn btn-success">Matricular</button></td>                                 
+                  <td><button (click)="uptadeAluno(a[0].idaluno)" class="btn btn-warning">Alterar</button></td>
                  
                 </tr>                
               </tbody>
