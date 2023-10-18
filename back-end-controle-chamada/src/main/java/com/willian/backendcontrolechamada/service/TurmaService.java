@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.willian.backendcontrolechamada.entity.Aluno;
 import com.willian.backendcontrolechamada.entity.Curso;
 import com.willian.backendcontrolechamada.entity.Turma;
 import com.willian.backendcontrolechamada.repository.TurmaRepository;
@@ -24,4 +25,9 @@ public class TurmaService {
         
     	return turmaRepository.save(turma);    	
     } 
+	
+	public Turma  getTurmaByIdy(int idturma)
+	{
+		return turmaRepository.getTurmaByIdy(idturma);
+	}
 }

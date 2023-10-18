@@ -16,7 +16,7 @@ public class AlunoService {
 	
 	public List<Aluno> getAluno()
 	{
-		return alunoRepository.findAll();
+		return alunoRepository.getAluno();
 	}
 	
 	public Aluno  getAlunoById(int idaluno)

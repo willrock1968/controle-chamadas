@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlunoService } from '../aluno.service';
 import { TurmaService } from 'src/app/turma/turma.service';
+import { MatriculaAlunoService } from './matricula-aluno.service';
 
 @Component({
   selector: 'app-matricula-aluno',
@@ -12,11 +13,14 @@ export class MatriculaAlunoComponent implements OnInit {
 
   public aluno: any;  
   public listTurma: any;
+  public listMatricula: any;
  
   constructor(
     private route: ActivatedRoute,
     private alunoService: AlunoService, 
-    private turmaService: TurmaService
+    private turmaService: TurmaService,
+    private matriculaAlunoService: MatriculaAlunoService,
+    private router: Router
   ){}
 
   ngOnInit(): void {
@@ -25,6 +29,7 @@ export class MatriculaAlunoComponent implements OnInit {
 
       this.getAlunoById(idaluno); 
       this.getTurma();
+      this.getMatricula();
      
     });
   }
@@ -34,7 +39,10 @@ export class MatriculaAlunoComponent implements OnInit {
     this.alunoService.getAlunoById(idaluno)
     .subscribe({
       next:(res)=>{       
-       this.aluno = res; 
+        this.aluno = res;        
+        const alunoJson = JSON.stringify(this.aluno);
+        // Armazena a string JSON no localStorage
+        localStorage.setItem('aluno', alunoJson);
        
       },
       error:(error)=>{
@@ -55,5 +63,45 @@ export class MatriculaAlunoComponent implements OnInit {
       }
     })   
   }
- 
+
+  matriculaAluno(idturma: any)
+  {    
+    const objetoJSONString = localStorage.getItem('aluno');
+    
+    if (objetoJSONString) 
+    {
+      const alunoJson = JSON.parse(objetoJSONString);
+      alunoJson.idturma = idturma; 
+      
+      this.matriculaAlunoService.matriculaAluno(alunoJson)
+     .subscribe({
+       next:(res)=>{     
+        console.log(res);   
+        //this.router.navigate(['aluno']);        
+       },
+       error:(error)=>{
+        console.log(error.message);       
+       }
+      })  
+    } 
+    else 
+    {
+      console.log('Chave "meuObjeto" não encontrada no localStorage.');
+    }    
+  } 
+
+
+  getMatricula()
+  {
+    this.matriculaAlunoService.getMatricula()
+    .subscribe({
+      next:(res)=>{
+       this.listMatricula = res; 
+       console.log(this.listMatricula);      
+      },
+      error:(error)=>{
+       console.log(error.message);       
+      }
+    })   
+  }
 }

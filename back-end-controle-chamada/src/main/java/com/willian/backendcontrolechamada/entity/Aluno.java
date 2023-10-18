@@ -2,6 +2,8 @@ package com.willian.backendcontrolechamada.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,9 +16,7 @@ public class Aluno {
 	@GeneratedValue
 	private int idaluno;
 	
-	@OneToMany(mappedBy = "aluno")
-	private List<Matricula> matricula;
-	
+		
 	private String nome_aluno;
 	private String ra;
 	
@@ -27,13 +27,6 @@ public class Aluno {
 		this.idaluno = idaluno;
 	}
 	
-	public List<Matricula> getMatricula() {
-		return matricula;
-	}
-	
-	public void setMatricula(List<Matricula> matricula) {
-		this.matricula = matricula;
-	}
 	
 	public String getNome_aluno() {
 		return nome_aluno;

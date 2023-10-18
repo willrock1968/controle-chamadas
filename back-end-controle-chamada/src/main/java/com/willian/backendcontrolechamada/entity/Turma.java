@@ -3,6 +3,8 @@ package com.willian.backendcontrolechamada.entity;
 import java.time.LocalTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -30,17 +32,7 @@ public class Turma {
 	private LocalTime horario_aulas;
 	private int qtde_alunos_ativos;
 	
-	@OneToMany(mappedBy = "turma")
-	private List<Matricula> matricula;
-	
-	
-	public List<Matricula> getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(List<Matricula> matricula) {
-		this.matricula = matricula;
-	}
+		
 
 	public int getIdturma() {
 		return idturma;

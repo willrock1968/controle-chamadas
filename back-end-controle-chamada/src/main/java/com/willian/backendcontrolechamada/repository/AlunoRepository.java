@@ -12,4 +12,7 @@ import com.willian.backendcontrolechamada.entity.Aluno;
 public interface AlunoRepository extends JpaRepository<Aluno, Integer>{
 	@Query("SELECT a FROM Aluno a WHERE a.idaluno = :idaluno")
 	Aluno getAlunoByIdy(int idaluno);
+	
+	@Query("SELECT a FROM Aluno a")
+	List<Aluno> getAluno();
 }

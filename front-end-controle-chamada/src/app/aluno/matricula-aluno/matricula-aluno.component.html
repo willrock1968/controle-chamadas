@@ -21,7 +21,7 @@
                 <th>Horário Aulas</th>
                 <th>Alunos Ativos</th>
                 <th>Curso</th>
-                               
+                <th>Matricular</th>               
             </tr>
             </thead>
             <tbody>
@@ -33,7 +33,7 @@
                 <td>{{t.horario_aulas}}</td>
                 <td>{{t.qtde_alunos_ativos}}</td>
                 <td>{{t.curso.nome_curso}}</td>                  
-               
+                <td><button (click)="matriculaAluno(t.idturma)" class="btn btn-warning">Matricular Nessa Turma</button></td>
                 
             </tr>                
             </tbody>
