@@ -4,6 +4,7 @@ import { TurmaComponent } from '../turma/turma.component';
 import { NivelCursoComponent } from '../nivel-curso/nivel-curso.component';
 import { CursoComponent } from '../curso/curso.component';
 import { AlunoComponent } from '../aluno/aluno.component';
+import { AulaComponent } from '../aula/aula.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'aluno',
     component: AlunoComponent    
+  },
+  {
+    path: 'aula',
+    component: AulaComponent    
   }
 ]; 
 

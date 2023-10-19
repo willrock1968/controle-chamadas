@@ -14,12 +14,13 @@ import { FooterModule } from './footer/footer.module';
 import { CursoModule } from './curso/curso.module';
 import { TurmaModule } from './turma/turma.module';
 import { AlunoModule } from './aluno/aluno.module';
+import { AulaModule } from './aula/aula.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent
-    
+    ModalComponent    
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,8 @@ import { AlunoModule } from './aluno/aluno.module';
     NivelCursoModule,
     CursoModule,
     TurmaModule,
-    AlunoModule
+    AlunoModule,
+    AulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

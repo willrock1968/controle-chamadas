@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="animated fadeIn">
+    
+    <!--/.row-->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> <b>Minhas</b> Aulas  
+          </div>
+          <div class="card-body">
+           
+            <div class="row">
+              <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                <button (click)="newAula()" type="button" class="btn btn-primary">Nova Aula <i class="fa fa-exchange fa-lg mt-1"></i></button>
+              </div>
+            </div><br>
+                       
+            <table class="table table-bordered table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>Id</th> 
+                  <th>Data Aula</th> 
+                  <th>Conteúdo</th>                  
+                  <th>Alterar Aula</th>                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let a of listAula">
+                  <td>{{a.idaula }}</td>                  
+                  <td>{{a.data_aula}}</td>
+                  <td>{{a.conteudo}}</td>                                    
+                  <td><button (click)="uptadeAula(a.idaula)" class="btn btn-warning">Alterar</button></td>
+                 
+                </tr>                
+              </tbody>
+            </table>
+            <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!--/.col-->
+    </div>
+    <!--/.row-->
+  </div>
+  <app-footer></app-footer>
+
+
