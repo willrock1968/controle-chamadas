@@ -4,7 +4,7 @@ import { TurmaComponent } from '../turma/turma.component';
 import { NivelCursoComponent } from '../nivel-curso/nivel-curso.component';
 import { CursoComponent } from '../curso/curso.component';
 import { AlunoComponent } from '../aluno/aluno.component';
-
+//  aqui está o roteamento para as páginas que já estão prontas, havia programado já na develop
 const routes: Routes = [
   {
     path: 'nivel-curso',
