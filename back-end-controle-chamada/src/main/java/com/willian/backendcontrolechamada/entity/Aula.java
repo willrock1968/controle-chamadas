@@ -2,11 +2,16 @@ package com.willian.backendcontrolechamada.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Aula {
@@ -19,9 +24,20 @@ public class Aula {
 	@JoinColumn(name = "idturma", referencedColumnName = "idturma")
 	private Turma turma;
 	
-	private LocalDate data_aula;
-	
+	@Transient
+	private int idTurma;	
+	@JsonDeserialize(using = LocalDateDeserializer.class)
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate data_aula;	
 	private String conteudo;
+	
+	public int getIdTurma() {
+		return idTurma;
+	}
+
+	public void setIdTurma(int idTurma) {
+		this.idTurma = idTurma;
+	}
 
 	public int getIdaula() {
 		return idaula;

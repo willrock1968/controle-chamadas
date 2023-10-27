@@ -20,8 +20,8 @@ export class AulaService {
     return this.http.get(`${environment.apiUrl}/getAula`, this.header);
   }
 
-  saveAula(turma: any)
+  saveAula(aula: any)
   {
-    return this.http.post(`${environment.apiUrl}/saveAula`, turma, this.header);
+    return this.http.post(`${environment.apiUrl}/saveAula`, aula, this.header);
   }
 }  

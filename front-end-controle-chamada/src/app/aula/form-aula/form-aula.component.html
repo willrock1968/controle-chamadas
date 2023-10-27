@@ -1,1 +1,59 @@
-<p>form-aula works!</p>
+<!-- form-curso.component.html -->
+<app-header></app-header>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="card">
+                        <div class="card-content">
+                            <form [formGroup]="f" novalidate>
+                                <h1 class="center-align">Cadastro de Aula</h1>
+                                  
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <label for="turma" [ngClass]="{'active': f.get('idTurma')?.value !== ''}">Turma</label>
+                                        <select formControlName="idTurma" class="browser-default">
+                                            <option *ngFor="let turma of listTurma" [ngValue]="turma.idturma">{{ turma.nome_turma }}</option>
+                                        </select>
+                                    </div>
+                                </div>                                                   
+                                <div class="row" [ngClass]="{'has-success': f.controls['data_aula'].valid,
+                                'has-error': f.controls['data_aula'].invalid && (f.controls['data_aula'].touched || f.controls['data_aula'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <input id="data_aula" type="text" formControlName="data_aula" placeholder="Data da Aula" autocomplete="current-data_aula" required>
+                                        
+                                        <span class="text-danger" *ngIf="f.controls['data_aula'].invalid && (f.controls['data_aula'].touched || f.controls['data_aula'].dirty)">
+                                            Campo obrigatório com no mínimo 10 caracteres e no formato exemplo 12/12/2023
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="row" [ngClass]="{'has-success': f.controls['conteudo'].valid,
+                                'has-error': f.controls['conteudo'].invalid && (f.controls['conteudo'].touched || f.controls['conteudo'].dirty)}">
+                                    <div class="input-field col s12">
+                                        <textarea id="conteudo" formControlName="conteudo" placeholder="Conteúdo" autocomplete="current-conteudo" required></textarea>
+
+                                        <span class="text-danger" *ngIf="f.controls['conteudo'].invalid && (f.controls['conteudo'].touched || f.controls['conteudo'].dirty)">
+                                            Campo obrigatório com no mínimo 10 caracteres
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col s6 offset-s3 center-align">
+                                        <button type="button" [disabled]="f.invalid" (click)="saveAula()" class="btn waves-effect waves-light">Cadastrar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<app-footer></app-footer>
+
+
+

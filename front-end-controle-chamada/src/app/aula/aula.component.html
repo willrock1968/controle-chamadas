@@ -21,7 +21,8 @@
                 <tr>
                   <th>Id</th> 
                   <th>Data Aula</th> 
-                  <th>Conteúdo</th>                  
+                  <th>Conteúdo</th>   
+                  <th>Turma</th>                
                   <th>Alterar Aula</th>                  
                 </tr>
               </thead>
@@ -29,7 +30,8 @@
                 <tr *ngFor="let a of listAula">
                   <td>{{a.idaula }}</td>                  
                   <td>{{a.data_aula}}</td>
-                  <td>{{a.conteudo}}</td>                                    
+                  <td>{{a.conteudo}}</td> 
+                  <td>{{a.turma.nome_turma}}</td>                                    
                   <td><button (click)="uptadeAula(a.idaula)" class="btn btn-warning">Alterar</button></td>
                  
                 </tr>                

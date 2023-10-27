@@ -24,6 +24,10 @@ export const routes: Routes =
   {
     path: 'aluno',
     loadChildren: () => import('./aluno/aluno.module').then(m => m.AlunoModule)        
+  },  
+  {
+    path: 'aula',
+    loadChildren: () => import('./aula/aula.module').then(m => m.AulaModule)        
   }
    
 ];
