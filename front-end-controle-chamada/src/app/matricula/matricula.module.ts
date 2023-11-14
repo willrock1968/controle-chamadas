@@ -9,9 +9,13 @@ import { FooterModule } from '../footer/footer.module';
 import { MatriculaService } from './matricula.service';
 import { MatriculaRoutingModule } from './matricula-routing.module';
 import { MatriculaComponent } from './matricula.component';
+import { BrDateFormatPipe } from '../pipes/date-format.pipe';
 
 @NgModule({
-  declarations: [MatriculaComponent],
+  declarations: [
+    MatriculaComponent ,
+    BrDateFormatPipe
+  ],
   imports: [
     CommonModule,
     FormsModule,

@@ -38,5 +38,6 @@ import { MatriculaModule } from './matricula/matricula.module';
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule { }
