@@ -59,7 +59,7 @@ public class MatriculaController {
 	
 		
 	@GetMapping("/getMatriculas")
-	public List<Matricula> getMatriculas()
+	public List<Object[]> getMatriculas()
 	{
 		return matriculaService.getMatriculas();
 	}

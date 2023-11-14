@@ -73,8 +73,8 @@ export class MatricularAlunoComponent implements OnInit {
       this.matricularAlunoService.matricularAluno(alunoJson)
      .subscribe({
        next:(res)=>{     
-        console.log(res);   
-        this.router.navigate(['aluno']);        
+        alert("Aluno Matriculado")  
+        this.router.navigate(['matricula']);        
        },
        error:(error)=>{
         console.log(error.message);       

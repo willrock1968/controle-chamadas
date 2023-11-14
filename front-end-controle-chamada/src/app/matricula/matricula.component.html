@@ -14,29 +14,30 @@
         <table class="table table-bordered table-striped table-sm">
             <thead>
             <tr>
-                <th>Id do Aluno</th>
                 <th>Aluno</th>
-                <th>Id</th> 
-                <th>Código</th> 
+                <th>Data da Matricula</th>                
+                <th>Curso</th>
+                <th>Código da Turma</th> 
                 <th>Nome da Turma</th>
                 <th>Dias da Semana</th>
                 <th>Horário Aulas</th>
                 <th>Alunos Ativos</th>
-                <th>Curso</th>                             
+                                         
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let m of listMatriculas">
-                <td>{{m.idaluno }}</td>   
-                <td>{{m.nome_aluno }}</td>   
-                <td>{{m.idturma }}</td>                  
-                <td>{{m.codigo}}</td>
-                <td>{{m.nome_turma}}</td>
-                <td>{{m.dias_semana}}</td>
-                <td>{{m.horario_aulas}}</td>
-                <td>{{m.qtde_alunos_ativos}}</td>
-                <td>{{m.curso.nome_curso}}</td>  
-            </tr>                
+                <tr *ngFor="let m of listMatriculas">                    
+                    <td>{{ m[1].nome_aluno }}</td>
+                    <td>{{ m[2].data_matricula }}</td>
+                    <td>{{ m[0].curso.nome_curso }}</td>                    
+                    <td>{{ m[0].codigo }}</td>
+                    <td>{{ m[0].nome_turma }}</td>
+                    <td>{{ m[0].dias_semana }}</td>
+                    <td>{{ m[0].horario_aulas }}</td>
+                    <td>{{ m[0].qtde_alunos_ativos }}</td>
+                   
+                  </tr>
+                   
             </tbody>
         </table>
         <nav>

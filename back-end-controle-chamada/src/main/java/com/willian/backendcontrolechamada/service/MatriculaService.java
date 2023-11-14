@@ -21,9 +21,9 @@ public class MatriculaService {
 	}
 	
 		
-	public List<Matricula> getMatriculas()
+	public List<Object[]> getMatriculas()
 	{
-		return matriculaRepository.findAll();
+		return matriculaRepository.getMatriculas();
 	}
 
 }
