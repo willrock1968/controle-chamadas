@@ -32,8 +32,8 @@ public class MatriculaController {
 	private TurmaService turmaService;
 	
 		
-	@PostMapping("/matriculaAluno")
-	public ResponseEntity<?> matriculaAluno(@RequestBody MatriculaDTO matriculaDTO) {
+	@PostMapping("/matricularAluno")
+	public ResponseEntity<?> matricularAluno(@RequestBody MatriculaDTO matriculaDTO) {
 	    
 		try {
 			Matricula matricula = new Matricula();
@@ -46,7 +46,7 @@ public class MatriculaController {
 		    matricula.setData_matricula(dataAtual);
 		    matricula.setAtivo(true);
 		    
-		    matriculaService.matriculaAluno(matricula);
+		    matriculaService.matricularAluno(matricula);
 		    return ResponseEntity.ok("Matrícula realizada com sucesso");
 	    
 		} catch (Exception e) {
@@ -57,10 +57,11 @@ public class MatriculaController {
         }
 	}
 	
-	@GetMapping("/getMatricula")
-	public List<Matricula> getMatricula()
+		
+	@GetMapping("/getMatriculas")
+	public List<Matricula> getMatriculas()
 	{
-		return matriculaService.getMatricula();
+		return matriculaService.getMatriculas();
 	}
 
 }

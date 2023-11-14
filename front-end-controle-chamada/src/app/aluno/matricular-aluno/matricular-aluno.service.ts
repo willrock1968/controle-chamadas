@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from './../../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MatriculaAlunoService {
+export class MatricularAlunoService {
 
   private header: any = {headers: 
     new HttpHeaders({'Accept': 'application/json',
@@ -15,14 +15,9 @@ export class MatriculaAlunoService {
 
   constructor(private http: HttpClient) { }  
 
-  matriculaAluno(alunoJson: any)
+  matricularAluno(alunoJson: any)
   {
-    return this.http.post(`${environment.apiUrl}/matriculaAluno`, alunoJson, this.header);
-  }
-
-  
-  getMatricula()
-  {
-    return this.http.get(`${environment.apiUrl}/getMatricula`, this.header);
-  }
+    return this.http.post(`${environment.apiUrl}/matricularAluno`, alunoJson, this.header);
+  }  
+ 
 }

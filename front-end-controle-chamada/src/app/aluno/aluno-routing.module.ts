@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AlunoComponent } from './aluno.component';
 import { FormAlunoComponent } from './form-aluno/form-aluno.component';
-import { MatriculaAlunoComponent } from './matricula-aluno/matricula-aluno.component';
+import { MatricularAlunoComponent } from './matricular-aluno/matricular-aluno.component';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: FormAlunoComponent,    
   },
   {
-    path: 'matricula-aluno/:idaluno',
-    component: MatriculaAlunoComponent,    
+    path: 'matricular-aluno/:idaluno',
+    component: MatricularAlunoComponent,    
   }
 ]; 
 

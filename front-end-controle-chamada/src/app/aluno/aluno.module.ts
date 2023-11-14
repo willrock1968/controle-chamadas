@@ -11,10 +11,10 @@ import { AlunoComponent } from './aluno.component';
 import { AlunoService } from './aluno.service';
 import { AlunoRoutingModule } from './aluno-routing.module';
 import { FormAlunoComponent } from './form-aluno/form-aluno.component';
-import { MatriculaAlunoComponent } from './matricula-aluno/matricula-aluno.component';
+import { MatricularAlunoComponent } from './matricular-aluno/matricular-aluno.component';
 
 @NgModule({
-  declarations: [AlunoComponent, FormAlunoComponent, MatriculaAlunoComponent],
+  declarations: [AlunoComponent, FormAlunoComponent, MatricularAlunoComponent],
   imports: [
     CommonModule,
     FormsModule,

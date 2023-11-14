@@ -15,12 +15,13 @@ public class MatriculaService {
 	@Autowired
 	private MatriculaRepository matriculaRepository;
 	
-	public Matricula matriculaAluno(Matricula matricula)
+	public Matricula matricularAluno(Matricula matricula)
 	{
 		return matriculaRepository.save(matricula);
 	}
 	
-	public List<Matricula> getMatricula()
+		
+	public List<Matricula> getMatriculas()
 	{
 		return matriculaRepository.findAll();
 	}

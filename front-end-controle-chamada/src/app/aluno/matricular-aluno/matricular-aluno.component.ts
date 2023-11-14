@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlunoService } from '../aluno.service';
 import { TurmaService } from 'src/app/turma/turma.service';
-import { MatriculaAlunoService } from './matricula-aluno.service';
+import { MatricularAlunoService } from './matricular-aluno.service';
 
 @Component({
-  selector: 'app-matricula-aluno',
-  templateUrl: './matricula-aluno.component.html',
-  styleUrls: ['./matricula-aluno.component.css']
+  selector: 'app-matricular-aluno',
+  templateUrl: './matricular-aluno.component.html',
+  styleUrls: ['./matricular-aluno.component.css']
 })
-export class MatriculaAlunoComponent implements OnInit {
+export class MatricularAlunoComponent implements OnInit {
 
   public aluno: any;  
   public listTurma: any;
@@ -19,7 +19,7 @@ export class MatriculaAlunoComponent implements OnInit {
     private route: ActivatedRoute,
     private alunoService: AlunoService, 
     private turmaService: TurmaService,
-    private matriculaAlunoService: MatriculaAlunoService,
+    private matricularAlunoService: MatricularAlunoService,
     private router: Router
   ){}
 
@@ -28,8 +28,7 @@ export class MatriculaAlunoComponent implements OnInit {
       const idaluno = params['idaluno'];
 
       this.getAlunoById(idaluno); 
-      this.getTurma();
-      this.getMatricula();
+      this.getTurma();      
      
     });
   }
@@ -62,7 +61,7 @@ export class MatriculaAlunoComponent implements OnInit {
     })   
   }
 
-  matriculaAluno(idturma: any)
+  matricularAluno(idturma: any)
   {    
     const objetoJSONString = localStorage.getItem('aluno');
     
@@ -71,7 +70,7 @@ export class MatriculaAlunoComponent implements OnInit {
       const alunoJson = JSON.parse(objetoJSONString);
       alunoJson.idturma = idturma; 
       
-      this.matriculaAlunoService.matriculaAluno(alunoJson)
+      this.matricularAlunoService.matricularAluno(alunoJson)
      .subscribe({
        next:(res)=>{     
         console.log(res);   
@@ -86,20 +85,5 @@ export class MatriculaAlunoComponent implements OnInit {
     {
       console.log('Chave "meuObjeto" não encontrada no localStorage.');
     }    
-  } 
-
-
-  getMatricula()
-  {
-    this.matriculaAlunoService.getMatricula()
-    .subscribe({
-      next:(res)=>{
-       this.listMatricula = res; 
-       console.log(this.listMatricula);      
-      },
-      error:(error)=>{
-       console.log(error.message);       
-      }
-    })   
-  }
+  }   
 }

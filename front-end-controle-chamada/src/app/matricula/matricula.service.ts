@@ -14,4 +14,9 @@ export class MatriculaService {
   })}
 
   constructor(private http: HttpClient) { } 
+    
+  getMatriculas()
+  {
+    return this.http.get(`${environment.apiUrl}/getMatriculas`, this.header);
+  }
 }
