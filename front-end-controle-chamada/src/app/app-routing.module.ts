@@ -28,6 +28,10 @@ export const routes: Routes =
   {
     path: 'aula',
     loadChildren: () => import('./aula/aula.module').then(m => m.AulaModule)        
+  },  
+  {
+    path: 'matricula',
+    loadChildren: () => import('./matricula/matricula.module').then(m => m.MatriculaModule)        
   }
    
 ];

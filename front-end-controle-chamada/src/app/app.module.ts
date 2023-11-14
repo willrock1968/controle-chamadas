@@ -15,12 +15,12 @@ import { CursoModule } from './curso/curso.module';
 import { TurmaModule } from './turma/turma.module';
 import { AlunoModule } from './aluno/aluno.module';
 import { AulaModule } from './aula/aula.module';
-
+import { MatriculaModule } from './matricula/matricula.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ModalComponent    
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,8 @@ import { AulaModule } from './aula/aula.module';
     CursoModule,
     TurmaModule,
     AlunoModule,
-    AulaModule
+    AulaModule,
+    MatriculaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
