@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TurmaService } from '../turma/turma.service';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { AulaService } from './aula.service';
 
 @Component({
@@ -51,6 +51,19 @@ export class AulaComponent implements OnInit {
   uptadeAula(id: any)
   {
       
-  }  
+  } 
+  
+  openRealizarChamadaAula(idaula: any)
+  {
+    // Criar um objeto NavigationExtras para passar parâmetros
+    const navigationExtras: NavigationExtras = 
+    {
+      state: {
+        idaula: idaula
+      }
+    };
+    // Navegar para o componente desejado com os parâmetros
+    this.router.navigate(['chamada/form-chamada', idaula], navigationExtras);  
+  }
 
 }

@@ -16,6 +16,7 @@ import { TurmaModule } from './turma/turma.module';
 import { AlunoModule } from './aluno/aluno.module';
 import { AulaModule } from './aula/aula.module';
 import { MatriculaModule } from './matricula/matricula.module';
+import { ChamadaModule } from './chamada/chamada.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatriculaModule } from './matricula/matricula.module';
     TurmaModule,
     AlunoModule,
     AulaModule,
-    MatriculaModule
+    MatriculaModule,
+    ChamadaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

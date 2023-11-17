@@ -23,7 +23,8 @@
                   <th>Data Aula</th> 
                   <th>Conteúdo</th>   
                   <th>Turma</th>                
-                  <th>Alterar Aula</th>                  
+                  <th>Alterar Aula</th>  
+                  <th>Realizar Chamada dessa Aula</th>                     
                 </tr>
               </thead>
               <tbody>
@@ -33,7 +34,7 @@
                   <td>{{a.conteudo}}</td> 
                   <td>{{a.turma.nome_turma}}</td>                                    
                   <td><button (click)="uptadeAula(a.idaula)" class="btn btn-warning">Alterar</button></td>
-                 
+                  <td><button (click)="openRealizarChamadaAula(a.idaula)" class="btn btn-info">Realizar Chamada</button></td>
                 </tr>                
               </tbody>
             </table>

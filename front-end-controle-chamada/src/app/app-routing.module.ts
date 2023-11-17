@@ -32,6 +32,10 @@ export const routes: Routes =
   {
     path: 'matricula',
     loadChildren: () => import('./matricula/matricula.module').then(m => m.MatriculaModule)        
+  },  
+  {
+    path: 'chamada',
+    loadChildren: () => import('./chamada/chamada.module').then(m => m.ChamadaModule)        
   }
    
 ];

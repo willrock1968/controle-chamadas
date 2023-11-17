@@ -31,6 +31,15 @@ public class Aula {
 	private LocalDate data_aula;	
 	private String conteudo;
 	
+	// Construtor padrão sem argumentos
+    public Aula() {
+    }
+
+    // Construtor com argumentos para desserialização do JSON
+    public Aula(Integer idAula) {
+        this.idaula = idAula;
+    }
+	
 	public int getIdTurma() {
 		return idTurma;
 	}
