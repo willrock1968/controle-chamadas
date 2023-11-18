@@ -11,11 +11,14 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { HeaderModule } from '../header/header.module';
 import { FooterModule } from '../footer/footer.module';
 import { ChamadaService } from './chamada.service';
+import { BrDateFormatPipe } from '../pipes/date-format.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ChamadaComponent, FormChamadaComponent],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     HeaderModule,

@@ -10,14 +10,15 @@ import { MatriculaService } from './matricula.service';
 import { MatriculaRoutingModule } from './matricula-routing.module';
 import { MatriculaComponent } from './matricula.component';
 import { BrDateFormatPipe } from '../pipes/date-format.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
-    MatriculaComponent ,
-    BrDateFormatPipe
+    MatriculaComponent
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FormsModule,
     ReactiveFormsModule,
     HeaderModule,

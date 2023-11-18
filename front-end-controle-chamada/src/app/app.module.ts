@@ -36,7 +36,7 @@ import { ChamadaModule } from './chamada/chamada.module';
     AlunoModule,
     AulaModule,
     MatriculaModule,
-    ChamadaModule
+    ChamadaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
