@@ -38,3 +38,5 @@ Como o front-end ainda não tem login, consultar o arquivo AppRoutingModule para
 
 Licença
 Projeto desenvolvido por Willian dos Reis de Souza Copyright © 2023 Todos os Direitos Reservados.
+
+obs: criei a branch master
