@@ -3,7 +3,8 @@ Controle de Chamadas de Cursos
 
 O projeto tem como objetivo otimizar o lançamento e acompanhamento de chamadas de turmas de cursos técnicos e de qualificação.
 
-Endereço de Deploy - GitHub Pages https://utfpr-gp.github.io/roubank-app/
+Endereço de Deploy - GitHub Pages NO MEU GIT HUB NÃO APARECEU
+NENHUMA OPÇÃO SOBRE ESSE GIT HUB PAGES, SEGUI TUTORIAIS NO YOU TUBE E ONDE MOSTRA ESSA ÓPÇÃO NOS VÍDEOS QUE ASSISTI NÃO MOSTROU NO MEU REPOSITÓRIO, PORTANTO IREI GRAVAR O VÍDEO NO AMBIENTE DE DESENVOLVIMENTO MESMO, 
 
 Checklist FEITO. Criar um repositório no GitHub com a estrutura do Gitflow, incluindo pelo menos as branches principais "main" e "develop." Utilizar componentes de um framework CSS, como Bootstrap, Materialize ou outro à sua escolha.
 

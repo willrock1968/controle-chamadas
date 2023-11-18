@@ -16,44 +16,43 @@
         </div>
         <div class="card-body">
                                     
-        <table class="table table-bordered table-striped table-sm">
-            <thead>
-            <tr>                
-                <th>Aluno</th>
-                <th>Ra</th>
-                <th>Id Matricula</th>
-                <th>Data da Matricula</th>   
-                <th>Presença</th>               
-                                         
-            </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let c of listAlunosMatriculadosAulaTurma">                    
-                    <td>{{ c[1].nome_aluno }}</td>
-                    <td>{{ c[1].ra }}</td>
-                    <td>{{ c[2].idmatricula }}</td>                    
-                    <td>{{ c[2].data_matricula | brDateFormat }}</td>
-                    <td><input type="checkbox"></td>                                        
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                <tr>                
+                    <th>Aluno</th>
+                    <th>Ra</th>
+                    <th>Id Matricula</th>
+                    <th>Data da Matricula</th>   
+                    <th>Presença</th>               
+                                            
                 </tr>
-                <tr>
-                    <td><input type="checkbox"></td>  
-                </tr>
-                                  
-            </tbody>
-        </table>
-        <nav>
-            <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Prev</a></li>
-            <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-            </li>
-            
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of listAlunosMatriculadosAulaTurma">                    
+                        <td>{{ c[1].nome_aluno }}</td>
+                        <td>{{ c[1].ra }}</td>
+                        <td>{{ c[2].idmatricula }}</td>                    
+                        <td>{{ c[2].data_matricula | brDateFormat }}</td>
+                        <td><input type="checkbox"></td>                                        
+                    </tr>              
+                                    
+                </tbody>
+            </table>
+
+            <input type="checkbox">
+            <nav>
+                <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
     </div>
