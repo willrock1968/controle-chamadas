@@ -33,7 +33,7 @@ export class AulaComponent implements OnInit {
     this.aulaService.getAula()
     .subscribe({
       next:(res)=>{       
-       this.listAula = res;        
+       this.listAula = res;             
       },
       error:(error)=>{
        console.log(error.message);       

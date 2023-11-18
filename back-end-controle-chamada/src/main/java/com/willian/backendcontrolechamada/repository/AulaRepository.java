@@ -11,6 +11,7 @@ import com.willian.backendcontrolechamada.entity.Aula;
 @Repository
 public interface AulaRepository extends JpaRepository<Aula, Integer>{
 
-	@Query("SELECT a FROM Aula a JOIN a.turma t")
-	List<Aula> consultaAulaETurma();
+	@Query("SELECT a FROM Aula a JOIN a.turma t JOIN t.curso c")
+	List<Aula> consultaAulaETurmaECurso();
+
 }

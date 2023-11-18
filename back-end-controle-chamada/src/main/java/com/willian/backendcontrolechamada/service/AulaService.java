@@ -16,7 +16,7 @@ public class AulaService {
 	
 	public List<Aula> getAula()
 	{
-		return aulaRepository.consultaAulaETurma();
+		return aulaRepository.consultaAulaETurmaECurso();
 	}
 	
 	public Aula saveAula(Aula aula)
