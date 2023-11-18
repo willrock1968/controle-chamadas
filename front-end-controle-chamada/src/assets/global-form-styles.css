@@ -74,4 +74,13 @@
     content: "\2717";
     color: #f44336;
   }
+
+  /* Adicione estilos temporários para destacar o checkbox */
+td input[type="checkbox"] {
+  background-color: #007bff; /* Cor de fundo azul */
+  width: 20px; /* Largura ajustável conforme necessário */
+  height: 20px; /* Altura ajustável conforme necessário */
+  border: 1px solid #ccc; /* Borda para separar o checkbox */
+}
+
   

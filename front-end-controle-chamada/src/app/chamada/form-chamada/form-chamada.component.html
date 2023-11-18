@@ -21,7 +21,7 @@
             <tr>                
                 <th>Aluno</th>
                 <th>Ra</th>
-                <td>Id Matricula</td>
+                <th>Id Matricula</th>
                 <th>Data da Matricula</th>   
                 <th>Presença</th>               
                                          
@@ -32,8 +32,13 @@
                     <td>{{ c[1].nome_aluno }}</td>
                     <td>{{ c[1].ra }}</td>
                     <td>{{ c[2].idmatricula }}</td>                    
-                    <td>{{ c[2].data_matricula | brDateFormat }}</td>                                        
-                  </tr>                   
+                    <td>{{ c[2].data_matricula | brDateFormat }}</td>
+                    <td><input type="checkbox"></td>                                        
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>  
+                </tr>
+                                  
             </tbody>
         </table>
         <nav>
